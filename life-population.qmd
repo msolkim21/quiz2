@@ -1,0 +1,28 @@
+---
+title: "Life Expectancy and Population"
+
+---
+# Introduction
+
+```{python}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+gapminder = pd.read_csv('gapminder.csv')
+```
+
+## Scatterplot showing the relationship between Life Expectancy and Population in year 2007 in  the Americas 
+```{python}
+two00seven = gapminder[gapminder['year'] == 2007][gapminder['continent'] == 'Americas']
+
+sns.scatterplot(data=two00seven, x='life_expectancy', y='population_millions', hue='country', alpha=0.7)
+
+plt.xlabel('Life Expectancy')
+plt.ylabel('Population (millions)')
+plt.title('Life Expectancy vs Population (millions) (2007, Americas)')
+
+
+plt.legend(loc='upper left', bbox_to_anchor=(1, 1)) 
+```

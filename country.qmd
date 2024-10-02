@@ -1,0 +1,41 @@
+---
+title: "Changes in life expectancy, GDP per Capita, and population for United States over time."
+---
+
+# Introduction 
+```{python}
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+gapminder = pd.read_csv('gapminder.csv')
+```
+
+
+## Scatterplot showing the relationship between Life Expectancy and GDP per Capita in year 2007 in the Americas 
+```{python}
+USA = gapminder[gapminder['country'] == "United States"]
+
+fig, ax1 = plt.subplots(3, 1, figsize=(8, 13), sharex=True)
+
+ax1[0].plot(USA['year'], USA['life_expectancy'], marker='o', color='b', label='Life Expectancy')
+ax1[0].set_ylabel('Life Expectancy (years)')
+ax1[0].set_title('Changes in Life Expectancy, GDP per Capita, and Population for the United States Over Time')
+ax1[0].legend()
+
+ax1[1].plot(USA['year'], USA['gdp_per_capita'], marker='o', color='g', label='GDP per Capita')
+ax1[1].set_ylabel('GDP per Capita')
+ax1[1].legend()
+
+ax1[2].plot(USA['year'], USA['population_millions'], marker='o', color='r', label='Population')
+ax1[2].set_ylabel('Population (millions)')
+ax1[2].legend()
+
+ax1[2].set_xlabel('Year')
+
+plt.tight_layout() 
+plt.show()
+
+
+```

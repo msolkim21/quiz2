@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "life-population.html",
+    "href": "life-population.html",
+    "title": "Life Expectancy and Population",
+    "section": "",
+    "text": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\ngapminder = pd.read_csv('gapminder.csv')\n\n\n\n\ntwo00seven = gapminder[gapminder['year'] == 2007][gapminder['continent'] == 'Americas']\n\nsns.scatterplot(data=two00seven, x='life_expectancy', y='population_millions', hue='country', alpha=0.7)\n\nplt.xlabel('Life Expectancy')\nplt.ylabel('Population (millions)')\nplt.title('Life Expectancy vs Population (millions) (2007, Americas)')\n\n\nplt.legend(loc='upper left', bbox_to_anchor=(1, 1)) \n\n/var/folders/2j/nfy340790wd7lt4ykqtyjbt40000gn/T/ipykernel_41562/3356192033.py:1: UserWarning:\n\nBoolean Series key will be reindexed to match DataFrame index."
+  },
+  {
+    "objectID": "life-population.html#scatterplot-showing-the-relationship-between-life-expectancy-and-population-in-year-2007-in-the-americas",
+    "href": "life-population.html#scatterplot-showing-the-relationship-between-life-expectancy-and-population-in-year-2007-in-the-americas",
+    "title": "Life Expectancy and Population",
+    "section": "",
+    "text": "two00seven = gapminder[gapminder['year'] == 2007][gapminder['continent'] == 'Americas']\n\nsns.scatterplot(data=two00seven, x='life_expectancy', y='population_millions', hue='country', alpha=0.7)\n\nplt.xlabel('Life Expectancy')\nplt.ylabel('Population (millions)')\nplt.title('Life Expectancy vs Population (millions) (2007, Americas)')\n\n\nplt.legend(loc='upper left', bbox_to_anchor=(1, 1)) \n\n/var/folders/2j/nfy340790wd7lt4ykqtyjbt40000gn/T/ipykernel_41562/3356192033.py:1: UserWarning:\n\nBoolean Series key will be reindexed to match DataFrame index."
+  },
+  {
+    "objectID": "life-gdp.html",
+    "href": "life-gdp.html",
+    "title": "Life Expectancy and GDP per Capita",
+    "section": "",
+    "text": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\ngapminder = pd.read_csv('gapminder.csv')\n\n\n\n\ntwo00seven = gapminder[gapminder['year'] == 2007][gapminder['continent'] == 'Americas']\n\nsns.scatterplot(data=two00seven, x='life_expectancy', y='gdp_per_capita', hue='country', alpha=0.7)\n\nplt.ylabel('GDP per Capita')\nplt.xlabel('Life Expectancy')\nplt.title('Life Expectancy vs GDP per Capita (2007, Americas)')\n\nplt.legend(loc='upper left', bbox_to_anchor=(1, 1)) \n\n/var/folders/2j/nfy340790wd7lt4ykqtyjbt40000gn/T/ipykernel_41521/2504511057.py:1: UserWarning:\n\nBoolean Series key will be reindexed to match DataFrame index."
+  },
+  {
+    "objectID": "life-gdp.html#scatterplot-showing-the-relationship-between-life-expectancy-and-gdp-per-capita-in-year-2007-in-the-americas",
+    "href": "life-gdp.html#scatterplot-showing-the-relationship-between-life-expectancy-and-gdp-per-capita-in-year-2007-in-the-americas",
+    "title": "Life Expectancy and GDP per Capita",
+    "section": "",
+    "text": "two00seven = gapminder[gapminder['year'] == 2007][gapminder['continent'] == 'Americas']\n\nsns.scatterplot(data=two00seven, x='life_expectancy', y='gdp_per_capita', hue='country', alpha=0.7)\n\nplt.ylabel('GDP per Capita')\nplt.xlabel('Life Expectancy')\nplt.title('Life Expectancy vs GDP per Capita (2007, Americas)')\n\nplt.legend(loc='upper left', bbox_to_anchor=(1, 1)) \n\n/var/folders/2j/nfy340790wd7lt4ykqtyjbt40000gn/T/ipykernel_41521/2504511057.py:1: UserWarning:\n\nBoolean Series key will be reindexed to match DataFrame index."
+  },
+  {
+    "objectID": "country.html",
+    "href": "country.html",
+    "title": "Changes in life expectancy, GDP per Capita, and population for United States over time.",
+    "section": "",
+    "text": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\ngapminder = pd.read_csv('gapminder.csv')\n\n\n\n\nUSA = gapminder[gapminder['country'] == \"United States\"]\n\nfig, ax1 = plt.subplots(3, 1, figsize=(8, 13), sharex=True)\n\nax1[0].plot(USA['year'], USA['life_expectancy'], marker='o', color='b', label='Life Expectancy')\nax1[0].set_ylabel('Life Expectancy (years)')\nax1[0].set_title('Changes in Life Expectancy, GDP per Capita, and Population for the United States Over Time')\nax1[0].legend()\n\nax1[1].plot(USA['year'], USA['gdp_per_capita'], marker='o', color='g', label='GDP per Capita')\nax1[1].set_ylabel('GDP per Capita')\nax1[1].legend()\n\nax1[2].plot(USA['year'], USA['population_millions'], marker='o', color='r', label='Population')\nax1[2].set_ylabel('Population (millions)')\nax1[2].legend()\n\nax1[2].set_xlabel('Year')\n\nplt.tight_layout() \nplt.show()"
+  },
+  {
+    "objectID": "country.html#scatterplot-showing-the-relationship-between-life-expectancy-and-gdp-per-capita-in-year-2007-in-the-americas",
+    "href": "country.html#scatterplot-showing-the-relationship-between-life-expectancy-and-gdp-per-capita-in-year-2007-in-the-americas",
+    "title": "Changes in life expectancy, GDP per Capita, and population for United States over time.",
+    "section": "",
+    "text": "USA = gapminder[gapminder['country'] == \"United States\"]\n\nfig, ax1 = plt.subplots(3, 1, figsize=(8, 13), sharex=True)\n\nax1[0].plot(USA['year'], USA['life_expectancy'], marker='o', color='b', label='Life Expectancy')\nax1[0].set_ylabel('Life Expectancy (years)')\nax1[0].set_title('Changes in Life Expectancy, GDP per Capita, and Population for the United States Over Time')\nax1[0].legend()\n\nax1[1].plot(USA['year'], USA['gdp_per_capita'], marker='o', color='g', label='GDP per Capita')\nax1[1].set_ylabel('GDP per Capita')\nax1[1].legend()\n\nax1[2].plot(USA['year'], USA['population_millions'], marker='o', color='r', label='Population')\nax1[2].set_ylabel('Population (millions)')\nax1[2].legend()\n\nax1[2].set_xlabel('Year')\n\nplt.tight_layout() \nplt.show()"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Gapminder Data",
+    "section": "",
+    "text": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\n\ngapminder = pd.read_csv('gapminder.csv')\ngapminder\n\n\n\n\n\n\n\n\ncountry\ncontinent\nyear\nlife_expectancy\npopulation_millions\ngdp_per_capita\n\n\n\n\n0\nAfghanistan\nAsia\n1952\n28.801\n8.425333\n779.445314\n\n\n1\nAfghanistan\nAsia\n1957\n30.332\n9.240934\n820.853030\n\n\n2\nAfghanistan\nAsia\n1962\n31.997\n10.267083\n853.100710\n\n\n3\nAfghanistan\nAsia\n1967\n34.020\n11.537966\n836.197138\n\n\n4\nAfghanistan\nAsia\n1972\n36.088\n13.079460\n739.981106\n\n\n...\n...\n...\n...\n...\n...\n...\n\n\n1699\nZimbabwe\nAfrica\n1987\n62.351\n9.216418\n706.157306\n\n\n1700\nZimbabwe\nAfrica\n1992\n60.377\n10.704340\n693.420786\n\n\n1701\nZimbabwe\nAfrica\n1997\n46.809\n11.404948\n792.449960\n\n\n1702\nZimbabwe\nAfrica\n2002\n39.989\n11.926563\n672.038623\n\n\n1703\nZimbabwe\nAfrica\n2007\n43.487\n12.311143\n469.709298\n\n\n\n\n1704 rows × 6 columns\n\n\n\nFor each of 142 countries, the package provides values for life expectancy, GDP per capita, and population, every five years, from 1952 to 2007.\n\nLife Expectancy and GDP per Capita\nLife Expectancy and Population\nCountry Analysis\n\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  }
+]

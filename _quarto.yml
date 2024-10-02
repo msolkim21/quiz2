@@ -1,17 +1,22 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "quiz2"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-
+      - text: Home        
+        href: index.qmd
+      - text: Life-expectancy and GDP       
+        href: life-gdp.qmd
+      - text: Life-expectancy and Population
+        href: life-population.qmd
+      - text: Changes in Life expectancy, GDP per capita over time.   
+        href: country.qmd
 format:
   html:
-    theme: cosmo
+    theme: journal
     css: styles.css
     toc: true
 
